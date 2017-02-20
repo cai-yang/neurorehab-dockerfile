@@ -1,6 +1,6 @@
 FROM  ubuntu:14.04
 RUN sudo apt-get update
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list 
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" >> /etc/apt/sources.list.d/pgdg.list
 RUN sudo apt-get install -y -q wget
 RUN wget --no-check-certificate  --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 RUN sudo apt-get update
@@ -9,8 +9,6 @@ RUN apt-get install -y -q python-pip
 RUN sudo apt-get install -y -q python-dev
 RUN sudo pip install pip --upgrade
 RUN apt-get install -y -q git
-RUN git config --global user.name "cai-yang"
-RUN git config --global user.email "yc631207248@live.com"
 RUN git clone https://github.com/cai-yang/neurorehab.git neurorehab
 RUN echo "PATH="$/etc/postgresql/9.4/main:$PATH"" >> ~/.profile
 RUN sudo pip install -r neurorehab/requirements.txt
